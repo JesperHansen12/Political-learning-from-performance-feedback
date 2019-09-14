@@ -40,7 +40,7 @@ dtm_df <- convert(dtm, to = "data.frame")
 forandr <- dictionary(list(forandr = c("forand*", "forryk*", "forvandl*",
                                        "modi*", "omdan", "omform", "omskab",
                                        "refor*",  "reorganiser*", "revolutioner*",
-                                       "transfor*", "vend*", "ændr*")))
+                                       "transfor*", "vend*", "Ã¦ndr*")))
 
 dict_dtm <- dfm_lookup(dtm, forandr, nomatch = "unmatched")
 
@@ -64,19 +64,19 @@ new_dict <- new_dict %>%
   mutate(dato = as.Date(date, format = "%d-%m-%Y"))
 
 new_dict$kommune <- new_dict$kommune %>%
-  str_replace_all("Aeroe", "Ærø Kommune") %>%
+  str_replace_all("Aeroe", "Ã†rÃ¸ Kommune") %>%
   str_replace_all("Albertslun", "Albertslund Kommune") %>%
-  str_replace_all("Alleroe", "Allerød Kommune") %>%
+  str_replace_all("Alleroe", "AllerÃ¸d Kommune") %>%
   str_replace_all("Assens", "Assens Kommune") %>%
   str_replace_all("Balleru", "Ballerup Kommune") %>%
   str_replace_all("Billun", "Billund Kommune") %>%
   str_replace_all("Bornholm", "Bornholms Kommune") %>%
-  str_replace_all("Broendby", "Brøndby Kommune") %>%
-  str_replace_all("Broenderslev", "Brønderslev Kommune") %>%
-  str_replace_all("Dragoer", "Dragør Kommune") %>%
+  str_replace_all("Broendby", "BrÃ¸ndby Kommune") %>%
+  str_replace_all("Broenderslev", "BrÃ¸nderslev Kommune") %>%
+  str_replace_all("Dragoer", "DragÃ¸r Kommune") %>%
   str_replace_all("Egedal", "Egedal Kommune") %>%
   str_replace_all("Esbjerg", "Esbjerg Kommune") %>%
-  str_replace_all("Fanoe", "Fanø Kommune") %>%
+  str_replace_all("Fanoe", "FanÃ¸ Kommune") %>%
   str_replace_all("Favrskov", "Favrskov Kommune") %>%
   str_replace_all("Faxe", "Faxe Kommune") %>%
   str_replace_all("Fredensborg", "Fredensborg Kommune") %>%
@@ -84,7 +84,7 @@ new_dict$kommune <- new_dict$kommune %>%
   str_replace_all("Frederiksberg", "Frederiksberg Kommune") %>%
   str_replace_all("Frederikshavn", "Frederikshavn Kommune") %>%
   str_replace_all("Frederikssun", "Frederikssund Kommune") %>%
-  str_replace_all("Furesoe", "Furesø Kommune") %>%
+  str_replace_all("Furesoe", "FuresÃ¸ Kommune") %>%
   str_replace_all("Faaborg", "Faaborg-Midtfyn Kommune") %>%
   str_replace_all("Gentofte", "Gentofte Kommune") %>%
   str_replace_all("Gladsaxe", "Gladsaxe Kommune") %>%
@@ -93,36 +93,36 @@ new_dict$kommune <- new_dict$kommune %>%
   str_replace_all("Gribskov", "Gribskov Kommune") %>%
   str_replace_all("Guldborgsun", "Guldborgsund Kommune") %>%
   str_replace_all("Haderslev", "Haderslev Kommune") %>%
-  str_replace_all("Halsnaes", "Halsnæs Kommune") %>%
+  str_replace_all("Halsnaes", "HalsnÃ¦s Kommune") %>%
   str_replace_all("Hedenste", "Hedensted Kommune") %>%
-  str_replace_all("Helsingoer", "Helsingør Kommune") %>%
+  str_replace_all("Helsingoer", "HelsingÃ¸r Kommune") %>%
   str_replace_all("Herlev", "Herlev Kommune") %>%
   str_replace_all("Herning", "Herning Kommune") %>%
-  str_replace_all("Hilleroe", "Hillerød Kommune") %>%
-  str_replace_all("Hjoerring", "Hjørring Kommune") %>%
-  str_replace_all("Hoersholm", "Hørsholm Kommune") %>%
-  str_replace_all("Holbaek", "Holbæk Kommune") %>%
+  str_replace_all("Hilleroe", "HillerÃ¸d Kommune") %>%
+  str_replace_all("Hjoerring", "HjÃ¸rring Kommune") %>%
+  str_replace_all("Hoersholm", "HÃ¸rsholm Kommune") %>%
+  str_replace_all("Holbaek", "HolbÃ¦k Kommune") %>%
   str_replace_all("Holstebro", "Holstebro Kommune") %>%
   str_replace_all("Horsens", "Horsens Kommune") %>%
   str_replace_all("Hvidovre", "Hvidovre Kommune") %>%
   str_replace_all("Ikast", "Ikast-Brande Kommune") %>%
-  str_replace_all("Ishoej", "Ishøj Kommune") %>%
+  str_replace_all("Ishoej", "IshÃ¸j Kommune") %>%
   str_replace_all("Jammerbugt", "Jammerbugt Kommune") %>%
   str_replace_all("Kalundborg", "Kalundborg Kommune") %>%
   str_replace_all("Kerteminde", "Kerteminde Kommune") %>%
-  str_replace_all("Koebenhavn", "Københavns Kommune") %>%
-  str_replace_all("Koege", "Køge Kommune") %>%
+  str_replace_all("Koebenhavn", "KÃ¸benhavns Kommune") %>%
+  str_replace_all("Koege", "KÃ¸ge Kommune") %>%
   str_replace_all("Kolding", "Kolding Kommune") %>%
-  str_replace_all("Laesoe", "Læsø Kommune") %>%
+  str_replace_all("Laesoe", "LÃ¦sÃ¸ Kommune") %>%
   str_replace_all("Langelan", "Langeland Kommune") %>%
   str_replace_all("Lejre", "Lejre Kommune") %>%
   str_replace_all("Lemvig", "Lemvig Kommune") %>%
   str_replace_all("Lollan", "Lolland Kommune") %>%
-  str_replace_all("Lyngby", "Lyngby-Taarbæk Kommune") %>%
+  str_replace_all("Lyngby", "Lyngby-TaarbÃ¦k Kommune") %>%
   str_replace_all("Mariagerfjor", "Mariagerfjord Kommune") %>%
   str_replace_all("Middelfart", "Middelfart Kommune") %>%
-  str_replace_all("Morsoe", "Morsø Kommune") %>%
-  str_replace_all("Naestve", "Næstved Kommune") %>%
+  str_replace_all("Morsoe", "MorsÃ¸ Kommune") %>%
+  str_replace_all("Naestve", "NÃ¦stved Kommune") %>%
   str_replace_all("Norddjurs", "Norddjurs Kommune") %>%
   str_replace_all("Nordfyn", "Nordfyns Kommune") %>%
   str_replace_all("Nyborg", "Nyborg Kommune") %>%
@@ -132,27 +132,27 @@ new_dict$kommune <- new_dict$kommune %>%
   str_replace_all("Randers", "Randers Kommune") %>%
   str_replace_all("Rebil", "Rebild Kommune") %>%
   str_replace_all("Ringste", "Ringsted Kommune") %>%
-  str_replace_all("Rinkoebing", "Ringkøbing-Skjern Kommune") %>%
-  str_replace_all("Roedovre", "Rødovre Kommune") %>%
+  str_replace_all("Rinkoebing", "RingkÃ¸bing-Skjern Kommune") %>%
+  str_replace_all("Roedovre", "RÃ¸dovre Kommune") %>%
   str_replace_all("Roskilde", "Roskilde Kommune") %>%
   str_replace_all("Rudersdal", "Rudersdal Kommune") %>%
-  str_replace_all("Samsoe", "Samsø Kommune") %>%
+  str_replace_all("Samsoe", "SamsÃ¸ Kommune") %>%
   str_replace_all("Silkeborg", "Silkeborg Kommune") %>%
   str_replace_all("Skanderborg", "Skanderborg Kommune") %>%
   str_replace_all("Skive", "Skive Kommune") %>%
   str_replace_all("Slagelse", "Slagelse Kommune") %>%
-  str_replace_all("Soenderborg", "Sønderborg Kommune") %>%
-  str_replace_all("Solroe", "Solrød Kommune") %>%
-  str_replace_all("Soroe", "Sorø Kommune") %>%
+  str_replace_all("Soenderborg", "SÃ¸nderborg Kommune") %>%
+  str_replace_all("Solroe", "SolrÃ¸d Kommune") %>%
+  str_replace_all("Soroe", "SorÃ¸ Kommune") %>%
   str_replace_all("Stevns", "Stevns Kommune") %>%
   str_replace_all("Struer", "Struer Kommune") %>%
   str_replace_all("Svendborg", "Svendborg Kommune") %>%
   str_replace_all("Syddjurs", "Syddjurs Kommune") %>%
   str_replace_all("Thiste", "Thisted Kommune") %>%
-  str_replace_all("Toender", "Tønder Kommune") %>%
-  str_replace_all("Taarnby", "Tårnby Kommune") %>%
-  str_replace_all("Taastru", "Høje-Taastrup Kommune") %>%
-  str_replace_all("Vallensbaek", "Vallensbæk Kommune") %>%
+  str_replace_all("Toender", "TÃ¸nder Kommune") %>%
+  str_replace_all("Taarnby", "TÃ¥rnby Kommune") %>%
+  str_replace_all("Taastru", "HÃ¸je-Taastrup Kommune") %>%
+  str_replace_all("Vallensbaek", "VallensbÃ¦k Kommune") %>%
   str_replace_all("Varde", "Varde Kommune") %>%
   str_replace_all("Vejen", "Vejen Kommune") %>%
   str_replace_all("Vejle", "Vejle Kommune") %>%
@@ -163,7 +163,7 @@ new_dict$kommune <- new_dict$kommune %>%
   str_replace_all("Aalborg", "Aalborg Kommune") %>%
   str_replace_all("Aarhus", "Aarhus Kommune") 
 
-# Joiner datasÃ¦t
+# Joiner datasÃƒÂ¦t
 kommunedata$kommune <- as.character(kommunedata$kommune)
 
 new_dict$year <- as.integer(new_dict$year)
@@ -174,7 +174,7 @@ newest_dict <- new_dict %>%
 newest_dict %>%
   View()
 
-# Validering af målet - snakkes der mere om forandring efter valget?
+# Validering af mÃ¥let - snakkes der mere om forandring efter valget?
 new_dict <- new_dict %>%
   left_join(kommunedata)
 
@@ -220,7 +220,7 @@ summary(mod)
 mod <- lm(perc_change_sd ~ election + skift_parti + log(indbyggertal) + log(udg_pr_6_16) + reference + election*skift_parti, data = elect_test)
 summary(mod)
 
-# Laver tidsserieanalyse af vigtigheden af performance og økonomi for innovation
+# Laver tidsserieanalyse af vigtigheden af performance og Ã¸konomi for innovation
 tidy_newdict <- newest_dict %>%
   group_by(year, kommune) %>%
   summarise(perc_change = mean(perc_change),
@@ -239,7 +239,7 @@ tidy_newdict <- tidy_newdict %>%
   mutate(social = row_number(),
          newyear = gsub("^*", "01-01-", year))
 
-# Final models  standardiserer fornadring først
+# Final models  standardiserer fornadring fÃ¸rst
 tidy_newdict$perc_change_sd <- tidy_newdict$perc_change / 0.00127231
 
 hist <- plm(perc_change_sd ~ reference + log(exp) + log(indbyggertal), index = c("newyear", "kommune"), data = tidy_newdict,
@@ -252,7 +252,7 @@ social <- plm(perc_change_sd ~ social + log(exp) + log(indbyggertal), index = c(
 summary(hist)
 coefplot(hist, intercept = FALSE)
 
-# Lineære modeller med tidsdummies viser det samme
+# LineÃ¦re modeller med tidsdummies viser det samme
 histlm <- lm(perc_change_sd ~ reference + log(exp) + log(indbyggertal) + as.factor(newyear), data = tidy_newdict)
 sociallm <- lm(perc_change_sd ~ social + log(exp) + log(indbyggertal) + as.factor(newyear), data = tidy_newdict)
 
